@@ -1,10 +1,9 @@
 import './App.css';
 import api from './api/axiosconfig';
-import {useState, useEffect} from 'react';
 import Layout from './components/layout/Layout';
 import Home from './components/home/Home';
-import {Routes, Route} from 'react-router-dom'; 
-
+import {useState, useEffect} from 'react';
+import {Routes, Route, Router} from 'react-router-dom'; 
 
 
 function App() {
@@ -31,13 +30,13 @@ function App() {
 
   return (
     <div className="App">
-      Routes
       <Routes>
-        <Route path="/" element={<Layout/>}>
-          <Route path="/" element={<Home movies={movies} />} ></Route>
-        </Route>
+          <Route path="/" element={<Layout/>}>
+            <Route path="/" element={<Home movies={movies} />} ></Route>
+
+          </Route>
       </Routes>
-    </div>
+  </div>
   );
 }
 
